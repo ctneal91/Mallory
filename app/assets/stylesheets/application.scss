@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.header {
+  background-color: #344256;
+  height: 100px;
+  margin-top: 25px;
+  font: bold 30px Georgia;
+  color: #eee;
+  text-align: center;
+  line-height: 100px;
+}
+
+.container {
+  margin: 0px auto;
+  display: flex;
+  width: 1304px;
+  padding: 0px 0px;
+  flex-flow: row wrap;
+}
+
+.product_container {
+  width: 300px;
+  height: 530px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 21px 13px;
+  img {
+    margin: 10px 25px;
+  }
+  .product_name {
+    font-size: 25px;
+  }
+  .product_price {
+    font-size: 16px;
+    margin: 10px 5px;
+  }
+  .product_name, button {
+    margin: 0px 5px;
+  }
+}

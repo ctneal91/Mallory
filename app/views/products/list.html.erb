@@ -1,50 +1,14 @@
-<html>
-
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
-  </head>
-
-  <body>
-    <h1>Products#list</h1>
-
-
-    <table class = "mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
-      <thead>
-        <tr>
-          <th>Product ID</th>
-          <th>Item</th>
-          <th>Price</th>
-          <th>Image</th>
-          <th>Discount</th>
-          <th>Condition</th>
-          <th>Width</th>
-          <th>Length</th>
-          <th>Height</th>
-          <th>Quantity</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-          <% @products.each do |product| %>
-             <tr>
-               <td><%= product.pid%></td>
-               <td><%= product.item %></td>
-               <td><%= number_to_currency(product.price) %></td>
-               <td><%= image_tag(product.img_file, size: '260x320') %></td>
-               <td><%= product.discount %></td>
-               <td><%= product.condition %></td>
-               <td><%= product.dimension_w %></td>
-               <td><%= product.dimension_l %></td>
-               <td><%= product.dimension_h %></td>
-               <td><%= product.quantity %></td>
-               <td><%= product.category %></td>
-               <td>
-                 <%=link_to "View Details", "/products/#{product.pid}"%>
-               </td>
-             </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </body>
-</html>
+<div class="container">
+  <% @products.each do |product| %>
+    <div class="product_container">
+      <%= image_tag(product.img_file, size: '250x320') %>
+      <div class="product_name">
+        <%= product.item %>
+      </div>
+      <div class="product_price">
+        <%= number_to_currency(product.price) %>
+      </div>
+      <button class="btn"><%= link_to "More Details", product_path(pid: product.pid) %></button>
+    </div>
+  <% end %>
+</div>
