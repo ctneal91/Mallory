@@ -31,7 +31,7 @@
                <td><%= product.pid%></td>
                <td><%= product.item %></td>
                <td><%= number_to_currency(product.price) %></td>
-               <td><img src="/screnshots<%= product.image %>"></td>
+               <td><%= image_tag(product.img_file, size: '260x320') %></td>
                <td><%= product.discount %></td>
                <td><%= product.condition %></td>
                <td><%= product.dimension_w %></td>
