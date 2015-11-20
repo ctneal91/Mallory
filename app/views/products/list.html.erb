@@ -6,7 +6,7 @@
         <%= product.item %>
       </div>
       <div class="product_price">
-        <%= number_to_currency(product.price) %>
+        <%= number_to_currency(product.price, :precision => 0) %>
       </div>
       <button class="btn"><%= link_to "More Details", product_path(pid: product.pid) %></button>
     </div>

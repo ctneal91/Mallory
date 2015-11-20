@@ -1,2 +1,32 @@
-<h1>Products#detail</h1>
-<p>Find me in app/views/products/detail.html.erb</p>
+<div class="detail_container">
+  <%= image_tag(@product.img_file) %>
+  <div class="detail_description_container">
+    <div class="detail_product_name">
+      <%= @product.item %>
+    </div>
+    <div class="detail_price">
+      Price
+    </div>
+    <div class="detail_product_price">
+      <%= number_to_currency(@product.price, :precision => 0) %>
+    </div>
+    <div class="detail_description">
+      Description
+    </div>
+    <div class="detail_product_description">
+      <%= @product.description %>
+    </div>
+    <div class="detail_dimensions">
+      Dimensions
+    </div>
+    <div class="detail_product_dimensions">
+      Width: <%= @product.dimension_w %>
+    </div>
+    <div class="detail_product_dimensions">
+      Length: <%= @product.dimension_l %>
+    </div>
+    <div class="detail_product_dimensions">
+      Height: <%= @product.dimension_h %>
+    </div>
+  </div>
+</div>

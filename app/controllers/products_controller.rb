@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
       product.price = row.to_h["price"]
       product.img_file = row.to_h["img_file"]
       product.condition = row.to_h["condition"]
-      product.dimension_w = row.to_h["dimension_wr"]
+      product.dimension_w = row.to_h["dimension_w"]
       product.dimension_l = row.to_h["dimension_l"]
       product.dimension_h = row.to_h["dimension_h"]
       product.quantity = row.to_h["quantity"]
@@ -27,6 +27,10 @@ class ProductsController < ApplicationController
         product.discount = "20%"
       end
 
+      if product.img_file == "outdoor-chair-3"
+        product.img_file = "No image available"
+      end
+
       if product.pid.to_i >= 1
         product.pid = product.pid.to_i
       end
@@ -34,6 +38,9 @@ class ProductsController < ApplicationController
     end
 
     @products
+  end
+
+  def home
   end
 
   def list

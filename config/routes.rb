@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'products#list'
+  root 'products#home'
+
+  get 'products' => 'products#list', as: :products
 
   get 'products/:pid' => 'products#detail', as: :product
 
