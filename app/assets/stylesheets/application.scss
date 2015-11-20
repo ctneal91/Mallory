@@ -70,3 +70,26 @@
     }
   }
 }
+
+.home_container {
+  background-image: url(image-path('hero.jpg'));
+  height: 600px;
+  margin-top: 30px;
+  .home_description {
+    text-align: right;
+    padding-right: 20px;
+    .intro_tag {
+      padding-top: 100px;
+      font: bold 28px Georgia;
+      color: white;
+    }
+    .intro_subtag {
+      padding-top: 32px;
+      color: white;
+      font: normal 25px Arial;
+    }
+    button {
+      margin-top: 24px;
+    }
+  }
+}
