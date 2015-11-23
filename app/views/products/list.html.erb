@@ -1,14 +1,16 @@
 <div class="container">
   <% @products.each do |product| %>
-    <div class="product_container">
-      <%= image_tag(product.img_file, size: '250x320') %>
-      <div class="product_name">
-        <%= product.item %>
+    <% if product.quantity > 0 %>
+      <div class="product_container">
+        <%= image_tag(product.img_file, size: '250x320') %>
+        <div class="product_name">
+          <%= product.item %>
+        </div>
+        <div class="product_price">
+          <%= number_to_currency(product.price, :precision => 0) %>
+        </div>
+        <button class="btn"><%= link_to "More Details", product_path(pid: product.pid) %></button>
       </div>
-      <div class="product_price">
-        <%= number_to_currency(product.price, :precision => 0) %>
-      </div>
-      <button class="btn"><%= link_to "More Details", product_path(pid: product.pid) %></button>
-    </div>
+    <% end %>
   <% end %>
 </div>
